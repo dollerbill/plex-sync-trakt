@@ -5,6 +5,8 @@ TRAKT_ACCESS_TOKEN = Rails.application.credentials[:TRAKT_ACCESS_TOKEN].freeze
 TRAKT_ID = Rails.application.credentials[:TRAKT_CLIENT_ID].freeze
 TRAKT_SECRET = Rails.application.credentials[:TRAKT_CLIENT_SECRET].freeze
 TRAKT_USERNAME = Rails.application.credentials[:TRAKT_USERNAME].freeze
+TRAKT_REFRESH_TOKEN = Rails.application.credentials[:TRAKT_REFRESH_TOKEN].freeze
+TRAKT_ACCESS_TOKEN_EXPIRES_AT = Rails.application.credentials[:TRAKT_ACCESS_TOKEN_EXPIRES_AT].freeze
 
 BASE_HEADERS = {
   'Content-Type' => 'application/json',
