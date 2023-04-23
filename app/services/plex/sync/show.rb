@@ -6,6 +6,8 @@ module Plex
       def call
         requests = 0
         library.all.each do |show|
+          next if ignore_list[:tv_shows]&.include?(show.title)
+
           show.seasons.each do |season|
             season.episodes.each do |episode|
               puts "Starting #{show.title} - Season #{season.index} - Episode #{episode.index}- #{episode.title}"

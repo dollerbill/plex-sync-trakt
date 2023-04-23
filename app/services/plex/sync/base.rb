@@ -7,6 +7,16 @@ module Plex
         new.call
       end
 
+      def ignore_list
+        file_path = Rails.root.join('config', 'ignore_list.yml')
+
+        if File.exist?(file_path)
+          YAML.load_file(file_path).deep_symbolize_keys
+        else
+          { movies: [], tv_shows: [] }
+        end
+      end
+
       def call
       rescue Trakt::RateLimitError => e
         raise StandardError, e.message

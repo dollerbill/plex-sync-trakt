@@ -6,6 +6,8 @@ module Plex
       def call
         requests = 0
         library.all.each do |movie|
+          next if ignore_list[:movies]&.include?(movie.title)
+
           puts "Starting #{movie.title}"
           puts "Trakt requests: #{requests}"
           movie_atts = movie.attribute_hash
