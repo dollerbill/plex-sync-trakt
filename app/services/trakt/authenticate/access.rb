@@ -2,7 +2,13 @@
 
 module Trakt
   module Authenticate
-    class Access < Token
+    class Access
+      include Token
+
+      def self.call
+        new.access_token
+      end
+
       def access_token
         response = HTTP.post(DEVICE_CODE_URL, json: { 'client_id' => TRAKT_ID })
         device_code_data = JSON.parse(response.body.to_s)
