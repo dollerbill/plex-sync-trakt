@@ -7,7 +7,7 @@ ruby '3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'http', '~> 5.1'
-gem 'plex-ruby', '~> 1.5'
+gem 'plex-ruby', github: 'dollerbill/Plex-Ruby', ref: '9ec2159'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
 
